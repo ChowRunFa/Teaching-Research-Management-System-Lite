@@ -1,0 +1,138 @@
+@app.route('/papers', methods=['POST']):{
+"id": -1,
+"title": "测试文章标题",
+"source": "测试文章来源",
+"type": 1,
+"year": 2021,
+"level": 1,
+"authors": [{
+                "workno": "T0001",
+                "name": "张三",
+                "gender": 1,
+                "level": 5,
+                "ranking":1
+            },
+            {
+                "workno": "T0002",
+                "name": "李四",
+                "gender": 1,
+                "level": 4,
+                "ranking":2
+            },
+            {
+                "workno": "T0003",
+                "name": "王五",
+                "gender": 1,
+                "level": 3,
+                "ranking":3
+            },
+            {
+                "workno": "T0004",
+                "name": "赵六",
+                "gender": 1,
+                "level": 2,
+                "ranking":4
+            },
+            {
+                "workno": "T0005",
+                "name": "钱七",
+                "gender": 2,
+                "level": 1,
+                "ranking":5
+            }],
+"corresponding_author": {
+                "workno": "T0001",
+                "name": "张三",
+                "gender": 1,
+                "level": 5,
+                "ranking":1
+            }
+}
+
+
+{
+"id": -1,
+"name": "测试项目名",
+"source": "测试项目来源",
+"type": 1,
+"startyear": 2021,
+"endyear": 2023,
+"totalfund": 20000,
+"charges":[{
+"workno":-1,
+"name": "-1",
+"gender": 1,
+"level": 2,
+"ranking":2,
+"fund":18000
+},
+{
+"workno":-2,
+"name": "-2",
+"gender": 1,
+"level": 2,
+"ranking":1,
+"fund":2000
+}
+]
+}
+
+{
+"id": -1,
+"name": "测试课程名",
+"hours": 32,
+"property": 1,
+"teachings":[{
+"workno":-1,
+"name": "-1",
+"gender": 1,
+"level": 2,
+"ranking":1,
+"semester":3,
+"hours":16
+},{
+"workno":-2,
+"name": "-2",
+"gender": 1,
+"level": 2,
+"ranking":2,
+"semester":3,
+"hours":16
+}
+]
+}
+
+100,T0004,1,1
+100,T0005,2,0
+
+100,T0005,2,2023-06-09,1,1
+
+ -1,-1,1,18000
+-2,-1,2,2000
+-1,测试项目名,测试项目来源,1,20000,2021,2023
+
+ 
+
+
+ <h1>欢迎您登录</h1>
+    <div class="info">
+      <div>
+        <el-input placeholder="请输入工号" type="text" v-model="user.workno"></el-input>
+      </div>
+      <div>
+        <el-input placeholder="请输入姓名" type="text" v-model="user.name" show-password></el-input>
+      </div>
+    </div>
+    <div class="tool">
+      <div class="type">
+        <el-radio v-model="type" label="admin">管理员</el-radio>
+        <el-radio v-model="type" label="user">普通用户</el-radio>
+      </div>
+      <div class="password">
+        <el-link @click="gotoRegist" type="primary">注册账号</el-link>
+        <el-link type="danger">忘记密码</el-link>
+      </div>
+      <div class="btn">
+        <el-button style="width:500px;height: 40px;margin-top: 10px;" @click="login()" type="primary">登录</el-button>
+      </div>
+ </div>
