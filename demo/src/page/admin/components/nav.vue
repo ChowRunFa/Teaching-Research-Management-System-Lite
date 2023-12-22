@@ -32,7 +32,7 @@
           </el-menu-item>
 
           <el-menu-item index="3" @click="goPage('addproject')">
-            <el-icon><DataAnalysis /></el-icon>
+            <el-icon><TakeawayBox /></el-icon>
             <span slot="title">项目登记</span>
           </el-menu-item>
 
@@ -52,7 +52,7 @@
           </el-menu-item>
 
           <el-menu-item index="7" @click="goPage('project')">
-          <el-icon><DataLine /></el-icon>
+            <el-icon><MessageBox /></el-icon>
             <span slot="title">项目信息</span>
           </el-menu-item>
 
@@ -76,6 +76,41 @@
             <span slot="title">课程更新</span>
           </el-menu-item>
 
+          <el-menu-item index="12" @click="goPage('teacherRank')">
+            <el-icon><DataAnalysis /></el-icon>
+            <span slot="title">文章分布</span>
+          </el-menu-item>
+
+          <el-menu-item index="13" @click="goPage('paperCount')">
+            <el-icon><Histogram /></el-icon>
+            <span slot="title">发文趋势</span>
+          </el-menu-item>
+
+          <el-menu-item index="14" @click="goPage('projectPie')">
+            <el-icon><PieChart /></el-icon>
+            <span slot="title">项目分布</span>
+          </el-menu-item>
+
+          <el-menu-item index="15" @click="goPage('projectLine')">
+            <el-icon><DataLine /></el-icon>
+            <span slot="title">项目趋势</span>
+          </el-menu-item>
+
+          <el-menu-item index="16" @click="goPage('teacherCompare')">
+            <el-icon><Rank /></el-icon>
+            <span slot="title">教师对比</span>
+          </el-menu-item>
+
+          <el-menu-item index="17" @click="goPage('courseScatter')">
+            <el-icon><SetUp /></el-icon>
+            <span slot="title">课程安排</span>
+          </el-menu-item>
+
+          <el-menu-item index="18" @click="goPage('courseStack')">
+            <el-icon><Files /></el-icon>
+            <span slot="title">课程分布</span>
+          </el-menu-item>
+
         </el-menu>
       </el-col>
     </el-row>
@@ -84,10 +119,14 @@
 
 <script>
 var $this = {};
- import {Location, Setting, Menu ,Document,ChatDotSquare,View,
+ import {
+   Location, Setting, Menu ,Document,ChatDotSquare,View,SetUp,Rank,TakeawayBox,PieChart,Histogram,Files,
   Tickets, DataAnalysis, Reading, User, Collection, DataLine,Edit,MessageBox,Crop} from '@element-plus/icons'
 export default {
-
+  components: {
+            Location, Setting, Menu ,Document,ChatDotSquare,View,SetUp,Rank,TakeawayBox,PieChart,Histogram,Files,
+  Tickets, DataAnalysis, Reading, User, Collection, DataLine,Edit,MessageBox,Crop
+        },
   data() {
     return {};
   },
@@ -125,16 +164,27 @@ export default {
         $this.$router.push("/admin/updateProject").catch(error => error);
       }else if (link === "updateCourse") {
         $this.$router.push("/admin/updateCourse").catch(error => error);
+      } else if (link === "teacherRank") {
+        $this.$router.push("/admin/teacherRank").catch(error => error);
+      }else if (link === "paperCount") {
+        $this.$router.push("/admin/paperCount").catch(error => error);
+      }else if (link === "projectPie") {
+        $this.$router.push("/admin/projectPie").catch(error => error);
+      }else if (link === "teacherCompare") {
+        $this.$router.push("/admin/teacherCompare").catch(error => error);
+      }else if (link === "courseScatter") {
+        $this.$router.push("/admin/courseScatter").catch(error => error);
+      }else if (link === "courseStack") {
+        $this.$router.push("/admin/courseStack").catch(error => error);
+      }else if (link === "projectLine") {
+        $this.$router.push("/admin/projectLine").catch(error => error);
       } else {
 
       }
     }
-  },
+  }
 
-  components: {
-            Location, Setting, Menu ,Document,ChatDotSquare,View,
-  Tickets, DataAnalysis, Reading, User, Collection, DataLine,Edit,MessageBox,Crop
-        }
+
 
 };
 </script>

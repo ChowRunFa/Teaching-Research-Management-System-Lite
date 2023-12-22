@@ -66,6 +66,41 @@ const routes = [
                 path:'/admin/updateCourse',
                 component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/permission/updateCourse')
             },
+            {
+                name:'teacherRank',
+                path:'/admin/teacherRank',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/teacherRank')
+            },
+            {
+                name:'paperCount',
+                path:'/admin/paperCount',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/paperCount')
+            },
+            {
+                name:'projectPie',
+                path:'/admin/projectPie',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/projectPie')
+            },
+            {
+                name:'teacherCompare',
+                path:'/admin/teacherCompare',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/teacherCompare')
+            },
+            {
+                name:'courseScatter',
+                path:'/admin/courseScatter',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/courseScatter')
+            },
+            {
+                name:'courseStack',
+                path:'/admin/courseStack',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/courseStack')
+            },
+            {
+                name:'projectLine',
+                path:'/admin/projectLine',
+                component:()=>import(/*webpackChunkName:'teacher'*/'@/page/admin/visualization/projectLine')
+            },
             {path:'',redirect:'/admin/teacherinfo'}
         ]
     },
